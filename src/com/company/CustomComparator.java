@@ -13,7 +13,7 @@ public class CustomComparator {
         this.studentAge = studentAge;
     }
 
-    public static Comparator<CustomComparator> stuNameCompare = new Comparator<CustomComparator>() {
+    public static Comparator<CustomComparator> studentNameCompare = new Comparator<CustomComparator>() {
         @Override
         public int compare(CustomComparator s1, CustomComparator s2) {
             String name1 = s1.getName().toUpperCase();
@@ -26,7 +26,8 @@ public class CustomComparator {
         }
     };
 
-    //Now the above method can be called like == Collections.sort(arrayList, CustomComparator.stuNameCompare);
+    //Now the above method can be called like ==>
+    // Collections.sort(arrayList, CustomComparator.studentNameCompare);
 
     public String getName(){
         return this.name;
