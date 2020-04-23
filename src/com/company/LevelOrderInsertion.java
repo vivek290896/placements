@@ -44,6 +44,7 @@ public class LevelOrderInsertion {
         System.out.println("Before");
         inorderTraverse(levelOrderInsertion.root);
 
+
         insert(levelOrderInsertion.root,12);
         System.out.println("after");
         inorderTraverse(levelOrderInsertion.root);
