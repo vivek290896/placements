@@ -11,6 +11,15 @@ public class BSTUtility {
         return root;
     }
 
+    static Node find_LCM_BST(Node root, int n1, int n2){
+        if (root == null) return null;
+        if (n1 < root.key && n2 < root.key)
+            return find_LCM_BST(root.left,n1,n2);
+        if (n1 > root.key && n2 > root.key)
+            return find_LCM_BST(root.right,n1,n2);
+        return root;
+    }
+
     static Node createBST(){
         Node bst = new Node(5);
         insert(bst,2);
@@ -22,4 +31,5 @@ public class BSTUtility {
         insert(bst,8);
         return bst;
     }
+
 }
