@@ -1,6 +1,7 @@
 package com.company;
 
-import java.util.Vector;
+import java.util.*;
+
 public class ReplaceElements {
     public static void main(String[] args) {
         Vector<String> vector = new Vector<String>();
@@ -27,4 +28,5 @@ public class ReplaceElements {
             System.out.println(vector.get(i));
         }
     }
+
 }
