@@ -34,9 +34,7 @@ public class DetectCycle {
 
                 if (!visited[value]){
                     if(hasCycleUndirected(value,visited,node)) return true;
-                } else {
-                    if (value != parent) return true;
-                }
+                } else if (value != parent) return true;
             }
             return  false;
         }
