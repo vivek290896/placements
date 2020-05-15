@@ -45,6 +45,9 @@ public class GraphPractice {
         System.out.println("DFS");
         boolean visited_DFS[] = new boolean[g.V];
         init(visited_DFS);
+        ArrayList<ArrayList<Integer>> list = null;
+        list.get(0).get(0);
+
         DFS(source,g,visited_DFS);
     }
 }

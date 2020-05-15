@@ -13,7 +13,7 @@ public class RotateLeft {
     public int g_c_d(int a, int b){
         if (b == 0)
             return a;
-        else return g_c_d(a,a%b);
+        else return g_c_d(b,a%b);
     }
 
 
