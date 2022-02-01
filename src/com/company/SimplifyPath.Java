@@ -4,9 +4,9 @@ import java.util.*;
 
 public class SimplifyPath {
 	public static void main(String[] a) {
-		String path = "/home//c"; // failed test case: "/a/./b/../../c/" -->expected /c
-		// failed case not understood: "/b/../a/../d/../c/home/../q" -->expected: /c/q  why ??
-		System.out.println(simplifyPath(path));
+		String path = "/home//c";
+		path = "/home/./a/../c/q";
+		System.out.println(simplifyPath2(path));
 	}
 
 	public static String simplifyPath(String path){ 
@@ -30,5 +30,16 @@ public class SimplifyPath {
             result += itr.next().toString();
         }
         return result;
-    }	
+    }
+    public static String simplifyPath2(String path) {
+    	Deque<String> stack = new LinkedList<>();
+    	for (String atr: path.split("/")) {
+    		if (atr.equals("..")) stack.poll();
+    		else if (!atr.equals(".") && !atr.equals("")) stack.push(atr);
+    	}
+    	StringBuilder res = new StringBuilder();
+    	if (stack.size() == 0) return "/";
+    	while(stack.size() != 0) res.append("/").append(stack.pollLast());
+    	return res.toString();
+    }
 }
